@@ -57,10 +57,8 @@ through to invoicing.
 
 ![OptiBuild architecture, top to bottom: site teams and crews, React SPA, Laravel API, domain services, document AI, data layer, output and delivery](assets/architecture.svg)
 
-The shape is deliberately conventional — a single-page client over a token-authenticated API,
-domain services over a relational store — because the difficulty of this product is not in the
-transport. It is in the document-AI layer and in keeping one costing model consistent across
-seven modules that all want to own it.
+Client over a token-authenticated API, domain services over a relational store. The hard part is
+the document-AI layer and one costing model shared across seven modules.
 
 ## Engineering decisions
 
@@ -78,25 +76,21 @@ input instead of raw bytes, and makes a parsing failure diagnosable.
 Documents are segmented first, so the expensive step runs on units that fit and can be retried
 individually.
 
-**Role-scoped access at the data layer, not in the UI.** Permissions belong to the data layer, so
-a new endpoint cannot accidentally widen what a role can see. The UI reflects the rule; it does
-not implement it.
+**Permissions at the data layer.** A new endpoint cannot widen what a role can see. The UI
+reflects the rule.
 
-**Mobile as the same application, not a second one.** The site-facing build is the web client
-packaged natively rather than a parallel codebase, which is what makes it realistic to keep both
-in step.
+**Same application on mobile.** The site-facing build is the web client packaged natively, so both
+stay in step.
 
 ## AI in the product
-
-AI is applied where the document work is, not sprinkled across the interface:
 
 - **Document parsing** of quantity surveys, from long PDFs and industry exchange formats into
   structured line items.
 - **Costing suggestions** when a quote is composed from a parsed survey.
 - **Conversational assistance** inside the application.
 
-The AI produces structured data that a human reviews inside the normal workflow. It does not
-silently commit financial records.
+The AI produces structured data that a human reviews inside the normal workflow, before financial
+records are committed.
 
 ## Security and privacy
 
