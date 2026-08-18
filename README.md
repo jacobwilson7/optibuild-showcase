@@ -4,10 +4,11 @@
 > site: costs, accounting, work-progress statements, quantity takeoffs, documents, resources and
 > dashboards.
 
-**Role** — architecture, data layer, management modules, API integrations and the AI parsing of
-quantity-survey documents.
-**Stack** — Laravel · React · Vite · Capacitor (iOS/Android) · Python · relational data layer.
-**Status** — in production. Presented at **Edil Expo 2026** in Rome.
+**Role**
+Architecture · Data Layer · Management Modules · API Integrations · AI Document Parsing
+
+**Status**
+In production · Presented at **Edil Expo 2026** in Rome.
 
 ![OptiBuild site dashboard: active sites, total activities, assigned operators, revenue and work progress per job](assets/screenshots/site-dashboard.webp)
 
@@ -99,10 +100,28 @@ Environments are separated, and site documents — which are commercially sensit
 the same access rules as the records they belong to. Client data, endpoints and infrastructure
 details are deliberately not described here.
 
-## Tech stack
+## Stack
 
-`Laravel` `PHP 8.2` `React` `Vite` `Radix UI` `Capacitor (iOS/Android)` `Python`
-`relational database` `PDF generation` `e-invoicing` `Playwright`
+**Frontend**
+React · Vite · Radix UI
+
+**Backend**
+Laravel · PHP 8.2
+
+**Mobile**
+Capacitor · iOS · Android
+
+**AI / Parsing**
+Python · Quantity-survey parsing · PDF and DCF extraction
+
+**Data**
+Relational data layer · Role-scoped access · Audit trail
+
+**Output**
+PDF generation · QR codes · E-invoicing
+
+**Tooling**
+Playwright
 
 ## Result
 
