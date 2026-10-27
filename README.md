@@ -136,9 +136,3 @@ No further metrics are published here: what is not measured is not claimed.
 The source code is maintained in a private repository: OptiBuild is a commercial product with
 client-specific implementation details. This repository documents the architecture, the
 engineering decisions and the product work.
-
-## Links
-
-- **Interactive case study** — [francescoiaforte.vercel.app/en/projects/optibuild](https://francescoiaforte.vercel.app/en/projects/optibuild)
-- **Profile** — [github.com/francescoveryra-dot](https://github.com/francescoveryra-dot)
-- **Full portfolio** — [francescoiaforte.vercel.app](https://francescoiaforte.vercel.app)
